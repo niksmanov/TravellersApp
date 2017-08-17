@@ -3,6 +3,37 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+yarn-error.log
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# IDEs and editors
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# System Files
+.DS_Store
+Thumbs.db
+
 # User-specific files
 *.suo
 *.user
@@ -268,7 +299,11 @@ paket-files/
 *.sln.iml
 
 # Visual Studio Code Rider
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # CodeRush
 .cr/
