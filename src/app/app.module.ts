@@ -1,23 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RoutingModule } from './routing/routing.module';
 
-const routes: Routes = [];
+// Routes components
+import { NavigationComponent } from './navigation/navigation.component';
+import { RegisterComponent } from './register/register.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    RegisterComponent,
+    NotFoundComponent,
+    HomeComponent,
+    LoginComponent
 ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [
-    RouterModule
+    ReactiveFormsModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
