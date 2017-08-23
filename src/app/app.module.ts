@@ -2,8 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { RoutingModule } from './routing/routing.module';
+
+// Firebase modules
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 // Routes components
 import { NavigationComponent } from './navigation/navigation.component';
@@ -21,9 +28,12 @@ import { LoginComponent } from './login/login.component';
     NotFoundComponent,
     HomeComponent,
     LoginComponent
-],
+  ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     ReactiveFormsModule,
     RoutingModule
   ],
