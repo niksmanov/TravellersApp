@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
     this.buildForm();
   }
 
-  signup(): void {
+  register(): void {
     this.auth.emailSignUp(this.userForm.value['email'], this.userForm.value['password']);
     this.router.navigateByUrl('/home');
   }
@@ -73,8 +73,8 @@ export class RegisterComponent implements OnInit {
     },
     'password': {
       'required': 'Password is required.',
-      'pattern': 'Password must be include at one letter and one number.',
-      'minlength': 'Password must be at least 5 characters long.',
+      'pattern': 'Password must include at least one letter and one number.',
+      'minlength': 'Password must be 5 or more characters long.',
       'maxlength': 'Password cannot be more than 25 characters long.',
     }
   };

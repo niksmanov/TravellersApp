@@ -20,10 +20,10 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a routerLink="" routerLinkActive="active"><strong>Profile</strong></a></li>
-          <li><a routerLink="" routerLinkActive="active"><strong>Log out</strong></a></li>
-          <li><a routerLink="/login" routerLinkActive="active"><strong>Log in</strong></a></li>
-          <li><a routerLink="/register" routerLinkActive="active"><strong>Register</strong></a></li>
+          <li *ngIf="auth.currentUser"><a routerLink="/profile" routerLinkActive="active"><strong>Hello, {{auth.currentUserDisplayName}}</strong></a></li>
+          <li *ngIf="!auth.currentUser"><a routerLink="/login" routerLinkActive="active"><strong>Log in</strong></a></li>
+          <li *ngIf="!auth.currentUser"><a routerLink="/register" routerLinkActive="active"><strong>Register</strong></a></li>
+          <li *ngIf="auth.currentUser"><a routerLink="/home" routerLinkActive="active" (click)="logout()"><strong>Log out</strong></a></li>
         </ul>
       </div>
     </nav>

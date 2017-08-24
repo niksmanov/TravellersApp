@@ -50,7 +50,8 @@ export class AuthService {
         } else if (this.currentUserAnonymous) {
             return 'Anonymous';
         } else {
-            return this.authState['displayName'] || 'User without a Name';
+            const username = this.authState.email.split('@')[0];
+            return username;
         }
     }
 
@@ -85,7 +86,6 @@ export class AuthService {
     //// Sign Out ////
     signOut(): void {
         this.afAuth.auth.signOut();
-        this.router.navigate(['/']);
     }
 
 

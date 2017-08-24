@@ -18,6 +18,7 @@ import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -27,8 +28,9 @@ import { LoginComponent } from './login/login.component';
     RegisterComponent,
     NotFoundComponent,
     HomeComponent,
-    LoginComponent
-  ],
+    LoginComponent,
+    ProfileComponent
+],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
