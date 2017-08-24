@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AuthGuard } from '../firebase/auth.guard';
+
 import { NavigationComponent } from '../navigation/navigation.component';
 import { RegisterComponent } from '../register/register.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
@@ -12,9 +14,9 @@ import { ProfileComponent } from '../profile/profile.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'profile', component: ProfileComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -23,6 +25,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class RoutingModule { }

@@ -3,7 +3,6 @@ import { AuthService } from '../firebase/auth.service';
 
 @Component({
   selector: 'app-navigation',
-  providers: [AuthService],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })

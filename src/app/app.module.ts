@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RoutingModule } from './routing/routing.module';
 
+import { AuthService } from './firebase/auth.service';
+
 // Firebase modules
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -39,7 +41,7 @@ import { ProfileComponent } from './profile/profile.component';
     ReactiveFormsModule,
     RoutingModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
