@@ -5,7 +5,9 @@ import { AppComponent } from './app.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { RoutingModule } from './routing/routing.module';
+import { AdvertisementModule } from './advertisement/advertisement.module';
 
+// Services
 import { AuthService } from './firebase/auth.service';
 
 // Firebase modules
@@ -20,7 +22,6 @@ import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -30,8 +31,7 @@ import { ProfileComponent } from './profile/profile.component';
     RegisterComponent,
     NotFoundComponent,
     HomeComponent,
-    LoginComponent,
-    ProfileComponent
+    LoginComponent
 ],
   imports: [
     BrowserModule,
@@ -39,7 +39,8 @@ import { ProfileComponent } from './profile/profile.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     ReactiveFormsModule,
-    RoutingModule
+    RoutingModule,
+    AdvertisementModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

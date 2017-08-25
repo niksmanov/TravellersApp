@@ -43,6 +43,11 @@ export class AuthService {
         return this.authenticated ? this.authState.isAnonymous : false;
     }
 
+    // Returns current user display email
+    get currentUserDisplayEmail(): string {
+        return this.authState.email;
+    }
+
     // Returns current user display name or Guest
     get currentUserDisplayName(): string {
         if (!this.authState) {
