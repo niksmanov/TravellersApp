@@ -4,10 +4,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o",
+    "start": "ng serve",
     "build": "ng build",
-	"doc": "compodoc -s tsconfig.json -o",
-	"generate-doc": "compodoc -p tsconfig.json",
+    "doc": "compodoc -s tsconfig.json -o",
+    "generate-doc": "compodoc -p tsconfig.json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
