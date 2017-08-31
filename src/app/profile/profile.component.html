@@ -16,92 +16,96 @@
         <div class="panel-body">
 
           <!-- Start of "Add new advertisement" form -->
-          <div class="form-group">
-            <label class="control-label col-md-4  "> Property type </label>
-            <div class="controls col-md-8 " style="margin-bottom: 10px">
-              <label class="radio-inline"><input required #a='ngModel' [(ngModel)]="advertisement.propertyType" type="radio" name="propertyType" value="Apartment"  style="margin-bottom: 10px">Apartment</label>
-              <label class="radio-inline"><input required #a='ngModel' [(ngModel)]="advertisement.propertyType" type="radio" name="propertyType" value="House"  style="margin-bottom: 10px">House</label>
-              <label class="radio-inline"><input required #a='ngModel' [(ngModel)]="advertisement.propertyType" type="radio" name="propertyType" value="Hotel"  style="margin-bottom: 10px">Hotel</label>
+          <form (ngSubmit)="createAdvertisement(createForm.value)" #createForm=ngForm novalidate>
+            <div class="form-group">
+              <label class="control-label col-md-4  "> Property type </label>
+              <div class="controls col-md-8 " style="margin-bottom: 10px">
+                <label class="radio-inline"><input required #a='ngModel' [(ngModel)]="advertisement.propertyType" type="radio" name="propertyType" value="Apartment"  style="margin-bottom: 10px">Apartment</label>
+                <label class="radio-inline"><input required #a='ngModel' [(ngModel)]="advertisement.propertyType" type="radio" name="propertyType" value="House"  style="margin-bottom: 10px">House</label>
+                <label class="radio-inline"><input required #a='ngModel' [(ngModel)]="advertisement.propertyType" type="radio" name="propertyType" value="Hotel"  style="margin-bottom: 10px">Hotel</label>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="control-label col-md-4"> Owner e-mail address</label>
-            <div class="controls col-md-8 ">
-              <input disabled class="input required -md  textinput required  textinput required  form-control" value="{{auth.currentUserDisplayEmail}}"
-                style="margin-bottom: 10px" />
+            <div class="form-group">
+              <label class="control-label col-md-4"> Owner e-mail address</label>
+              <div class="controls col-md-8 ">
+                <input disabled class="input required -md  textinput required  textinput required  form-control" value="{{auth.currentUserDisplayEmail}}"
+                  style="margin-bottom: 10px" />
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="control-label col-md-4  "> Owner full name </label>
-            <div class="controls col-md-8 ">
-              <input required #b='ngModel' class="input required -md textinput required  textinput required  form-control" name="ownerFullname"
-                placeholder="Your Frist name and Last name" [(ngModel)]="advertisement.ownerFullname" style="margin-bottom: 10px"
-                type="text" />
+            <div class="form-group">
+              <label class="control-label col-md-4  "> Owner full name </label>
+              <div class="controls col-md-8 ">
+                <input required #b='ngModel' class="input required -md textinput required  textinput required  form-control" name="ownerFullname"
+                  placeholder="Your Frist name and Last name" [(ngModel)]="advertisement.ownerFullname" style="margin-bottom: 10px"
+                  type="text" />
+              </div>
             </div>
-          </div>
 
-          <div id="div_id_company" class="form-group">
-            <label for="id_company" class="control-label col-md-4  "> Owner phone </label>
-            <div class="controls col-md-8 ">
-              <input required #c='ngModel' class="input required -md textinput required  textinput required  form-control" name="ownerPhone"
-                placeholder="Your phone" [(ngModel)]="advertisement.ownerPhone" style="margin-bottom: 10px" type="phone" />
+            <div id="div_id_company" class="form-group">
+              <label for="id_company" class="control-label col-md-4  "> Owner phone </label>
+              <div class="controls col-md-8 ">
+                <input required #c='ngModel' class="input required -md textinput required  textinput required  form-control" name="ownerPhone"
+                  placeholder="Your phone" [(ngModel)]="advertisement.ownerPhone" style="margin-bottom: 10px" type="phone"
+                />
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="control-label col-md-4">Property address </label>
-            <div class="controls col-md-8 ">
-              <input required #d='ngModel' class="input required -md textinput required  textinput required  form-control" name="propertyAddress"
-                placeholder="Your property address" [(ngModel)]="advertisement.propertyAddress" style="margin-bottom: 10px"
-                type="text" />
+            <div class="form-group">
+              <label class="control-label col-md-4">Property address </label>
+              <div class="controls col-md-8 ">
+                <input required #d='ngModel' class="input required -md textinput required  textinput required  form-control" name="propertyAddress"
+                  placeholder="Your property address" [(ngModel)]="advertisement.propertyAddress" style="margin-bottom: 10px"
+                  type="text" />
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="control-label col-md-4  "> Rooms count </label>
-            <div class="controls col-md-8 " style="margin-bottom: 10px">
-              <label class="radio-inline"><input required #e='ngModel' [(ngModel)]="advertisement.roomsCount" type="radio" name="roomsCount" value="1"  style="margin-bottom: 10px">1</label>
-              <label class="radio-inline"><input required #e='ngModel' [(ngModel)]="advertisement.roomsCount" type="radio" name="roomsCount" value="2"  style="margin-bottom: 10px">2</label>
-              <label class="radio-inline"><input required #e='ngModel' [(ngModel)]="advertisement.roomsCount" type="radio" name="roomsCount" value="3"  style="margin-bottom: 10px">3</label>
-              <label class="radio-inline"><input required #e='ngModel' [(ngModel)]="advertisement.roomsCount" type="radio" name="roomsCount" value="4"  style="margin-bottom: 10px">4</label>
-              <label class="radio-inline"><input required #e='ngModel' [(ngModel)]="advertisement.roomsCount" type="radio" name="roomsCount" value="5"  style="margin-bottom: 10px">5</label>
+            <div class="form-group">
+              <label class="control-label col-md-4  "> Rooms count </label>
+              <div class="controls col-md-8 " style="margin-bottom: 10px">
+                <label class="radio-inline"><input required #e='ngModel' [(ngModel)]="advertisement.roomsCount" type="radio" name="roomsCount" value="1"  style="margin-bottom: 10px">1</label>
+                <label class="radio-inline"><input required #e='ngModel' [(ngModel)]="advertisement.roomsCount" type="radio" name="roomsCount" value="2"  style="margin-bottom: 10px">2</label>
+                <label class="radio-inline"><input required #e='ngModel' [(ngModel)]="advertisement.roomsCount" type="radio" name="roomsCount" value="3"  style="margin-bottom: 10px">3</label>
+                <label class="radio-inline"><input required #e='ngModel' [(ngModel)]="advertisement.roomsCount" type="radio" name="roomsCount" value="4"  style="margin-bottom: 10px">4</label>
+                <label class="radio-inline"><input required #e='ngModel' [(ngModel)]="advertisement.roomsCount" type="radio" name="roomsCount" value="5"  style="margin-bottom: 10px">5</label>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="control-label col-md-4  "> Beds count </label>
-            <div class="controls col-md-8 " style="margin-bottom: 10px">
-              <label class="radio-inline"><input required #f='ngModel' [(ngModel)]="advertisement.bedsCount" type="radio" name="bedsCount" value="2"  style="margin-bottom: 10px">2</label>
-              <label class="radio-inline"><input required #f='ngModel' [(ngModel)]="advertisement.bedsCount" type="radio" name="bedsCount" value="4"  style="margin-bottom: 10px">4</label>
-              <label class="radio-inline"><input required #f='ngModel' [(ngModel)]="advertisement.bedsCount" type="radio" name="bedsCount" value="6"  style="margin-bottom: 10px">6</label>
-              <label class="radio-inline"><input required #f='ngModel' [(ngModel)]="advertisement.bedsCount" type="radio" name="bedsCount" value="8"  style="margin-bottom: 10px">8</label>
-              <label class="radio-inline"><input required #f='ngModel' [(ngModel)]="advertisement.bedsCount" type="radio" name="bedsCount" value="10"  style="margin-bottom: 10px">10</label>
+            <div class="form-group">
+              <label class="control-label col-md-4  "> Beds count </label>
+              <div class="controls col-md-8 " style="margin-bottom: 10px">
+                <label class="radio-inline"><input required #f='ngModel' [(ngModel)]="advertisement.bedsCount" type="radio" name="bedsCount" value="2"  style="margin-bottom: 10px">2</label>
+                <label class="radio-inline"><input required #f='ngModel' [(ngModel)]="advertisement.bedsCount" type="radio" name="bedsCount" value="4"  style="margin-bottom: 10px">4</label>
+                <label class="radio-inline"><input required #f='ngModel' [(ngModel)]="advertisement.bedsCount" type="radio" name="bedsCount" value="6"  style="margin-bottom: 10px">6</label>
+                <label class="radio-inline"><input required #f='ngModel' [(ngModel)]="advertisement.bedsCount" type="radio" name="bedsCount" value="8"  style="margin-bottom: 10px">8</label>
+                <label class="radio-inline"><input required #f='ngModel' [(ngModel)]="advertisement.bedsCount" type="radio" name="bedsCount" value="10"  style="margin-bottom: 10px">10</label>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="control-label col-md-4">Price per night </label>
-            <div class="controls col-md-8 ">
-              <input required #g='ngModel' class="input required -md textinput required  textinput required  form-control" name="propertyPrice"
-                placeholder="Your property price per night" [(ngModel)]="advertisement.propertyPrice" style="margin-bottom: 10px"
-                type="text" />
+            <div class="form-group">
+              <label class="control-label col-md-4">Price per night </label>
+              <div class="controls col-md-8 ">
+                <input required #g='ngModel' class="input required -md textinput required  textinput required  form-control" name="propertyPrice"
+                  placeholder="Your property price per night" [(ngModel)]="advertisement.propertyPrice" style="margin-bottom: 10px"
+                  type="text" />
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="control-label col-md-4">Description </label>
-            <div class="controls col-md-8 ">
-              <textarea rows="5" required #h='ngModel' class="input required -md textinput required  textinput required  form-control"
-                name="description" placeholder="Extra info about advertisement..." [(ngModel)]="advertisement.description"
-                style="margin-bottom: 10px; resize:none; overflow:hidden;" type="text" maxlength="250"></textarea>
+            <div class="form-group">
+              <label class="control-label col-md-4">Description </label>
+              <div class="controls col-md-8 ">
+                <textarea rows="5" required #h='ngModel' class="input required -md textinput required  textinput required  form-control"
+                  name="description" placeholder="Extra info about advertisement..." [(ngModel)]="advertisement.description"
+                  style="margin-bottom: 10px; resize:none; overflow:hidden;" type="text" maxlength="250"></textarea>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group buttons">
-            <button id="add" type="submit" class="button btn btn-success" (click)='createAdvertisement()' [disabled]="!a.valid || !b.valid || !c.valid || !d.valid || !e.valid|| !f.valid|| !g.valid|| !h.valid">Add advertisement</button>
-          </div>
+            <div class="form-group buttons">
+              <button id="add" type="submit" class="button btn btn-success" (click)='createAdvertisement()' [disabled]="!createForm.valid">Add advertisement</button>
+            </div>
+          </form>
+
         </div>
         <!-- End of "Add new advertisement" form -->
 
