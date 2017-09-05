@@ -1,0 +1,10 @@
+<p>
+  listAll works!
+</p>
+<div class="tab-content">
+    <div class="tab-pane fade in active" id="all">
+      <app-previewOfHomes *ngFor="let home of homes" [home]="home" ></app-previewOfHomes>
+        <!-- <app-restaurant-partial *ngFor="let home of homes" [home]="home">
+        </app-restaurant-partial> -->
+    </div>
+</div>
