@@ -40,7 +40,7 @@ import { LoginComponent } from './login/login.component';
     AngularFireAuthModule,
     ReactiveFormsModule,
     RoutingModule,
-    AdvertisementModule,
+    AdvertisementModule
   ],
   providers: [AuthService, AdvertisementService],
   bootstrap: [AppComponent]

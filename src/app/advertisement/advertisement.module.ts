@@ -19,7 +19,8 @@ import { StrongItemDirective } from '../shared/strongItem.directive';
     CommonModule,
     AdvertisementRouting,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AngularFireDatabaseModule
   ],
   exports: [
     ProfileComponent,
