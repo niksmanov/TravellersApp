@@ -1,41 +1,48 @@
-import { CoreModule } from './core/core.module';
-import { AllHomesModule } from './allHomes/allHomes.module';
-import { UsersModule } from './users/users.module';
-import { AppRoutingModule } from './app-routing.module';
-import { HomePageModule } from './home-page/home-page.module';
-import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
+import { AppComponent } from './app.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { RoutingModule } from './shared/routing.module';
+import { AdvertisementModule } from './shared/advertisement.module';
+
+// Services
+import { AuthService } from './services/auth.service';
 
 // Firebase modules
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireAuth } from 'angularfire2/auth';
+
+// Routes components
+import { NavigationComponent } from './navigation/navigation.component';
+import { RegisterComponent } from './register/register.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavigationComponent,
+    RegisterComponent,
+    NotFoundComponent,
+    HomeComponent,
+    LoginComponent
 ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     ReactiveFormsModule,
-    HomePageModule,
-    SharedModule,
-    AppRoutingModule,
-    UsersModule,
-    CoreModule,
-    AllHomesModule
+    RoutingModule,
+    AdvertisementModule
   ],
-  providers: [AngularFireAuth],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

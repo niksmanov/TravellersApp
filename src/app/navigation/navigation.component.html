@@ -1,0 +1,30 @@
+<div class="container">
+  <div style="text-align:center">
+    <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        <a class="navbar-brand"><strong>{{title}}</strong></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+          <li><a routerLink="/apartments" routerLinkActive="active">Apartments</a></li>
+          <li><a routerLink="/houses" routerLinkActive="active">Houses</a></li>
+          <li><a routerLink="/hotels" routerLinkActive="active">Hotels</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li *ngIf="auth.currentUser"><a routerLink="/profile" routerLinkActive="active"><strong>Hello, {{auth.currentUserDisplayName}}</strong></a></li>
+          <li *ngIf="!auth.currentUser"><a routerLink="/login" routerLinkActive="active"><strong>Log in</strong></a></li>
+          <li *ngIf="!auth.currentUser"><a routerLink="/register" routerLinkActive="active"><strong>Register</strong></a></li>
+          <li *ngIf="auth.currentUser"><a routerLink="/home" routerLinkActive="active" (click)="logout()"><strong>Log out</strong></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
