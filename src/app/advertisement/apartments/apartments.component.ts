@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AdvertisementService } from '../services/advertisement.service';
-import { Advertisement } from '../models/advertisement';
+import { AdvertisementService } from './../../services/advertisement.service';
+import { Advertisement } from './../../models/advertisement';
 import { FirebaseListObservable } from 'angularfire2/database';
 
 

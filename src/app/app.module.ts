@@ -1,11 +1,12 @@
+import { AdvertisementService } from './services/advertisement.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { RoutingModule } from './shared/routing.module';
-import { AdvertisementModule } from './shared/advertisement.module';
+import { RoutingModule } from './routing.module';
+import { AdvertisementModule } from './advertisement/advertisement.module';
 
 // Services
 import { AuthService } from './services/auth.service';
@@ -42,7 +43,7 @@ import { LoginComponent } from './login/login.component';
     RoutingModule,
     AdvertisementModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AdvertisementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
