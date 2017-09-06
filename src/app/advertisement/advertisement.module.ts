@@ -1,4 +1,3 @@
-
 import { HousesComponent } from './houses/houses.component';
 import { ApartmentsComponent } from './apartments/apartments.component';
 import { ProfileComponent } from './../profile/profile.component';
@@ -9,25 +8,34 @@ import { CommonModule } from '@angular/common';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AdvertisementRouting } from './advertisement-routing';
 
+// Pipes
+import { UpperCaseFirstLetterPipe } from '../shared/upperCase-firstLetter.pipe';
+
+// Directives
+import { StrongItemDirective } from '../shared/strongItem.directive';
+
 @NgModule({
   imports: [
     CommonModule,
     AdvertisementRouting,
     ReactiveFormsModule,
-    FormsModule,
-    AngularFireDatabaseModule
+    FormsModule
   ],
   exports: [
     ProfileComponent,
     ApartmentsComponent,
     HotelsComponent,
-    HousesComponent
+    HousesComponent,
+    UpperCaseFirstLetterPipe,
+    StrongItemDirective
   ],
   declarations: [
     ProfileComponent,
     ApartmentsComponent,
     HotelsComponent,
-    HousesComponent
+    HousesComponent,
+    UpperCaseFirstLetterPipe,
+    StrongItemDirective
   ]
 })
 export class AdvertisementModule { }

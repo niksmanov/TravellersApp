@@ -1,15 +1,15 @@
-import { AdvertisementService } from './services/advertisement.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
 import { RoutingModule } from './routing.module';
 import { AdvertisementModule } from './advertisement/advertisement.module';
 
 // Services
 import { AuthService } from './services/auth.service';
+import { AdvertisementService } from './services/advertisement.service';
 
 // Firebase modules
 import { environment } from '../environments/environment';
@@ -24,7 +24,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +32,7 @@ import { LoginComponent } from './login/login.component';
     NotFoundComponent,
     HomeComponent,
     LoginComponent
-],
+  ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -41,7 +40,7 @@ import { LoginComponent } from './login/login.component';
     AngularFireAuthModule,
     ReactiveFormsModule,
     RoutingModule,
-    AdvertisementModule
+    AdvertisementModule,
   ],
   providers: [AuthService, AdvertisementService],
   bootstrap: [AppComponent]

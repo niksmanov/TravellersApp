@@ -11,7 +11,7 @@ export class NavigationComponent implements OnInit {
 
   constructor(public auth: AuthService) {
   }
-  title = 'Traveller\'s App';
+  title = 'traveller\'s App';
 
   logout() {
     this.auth.signOut();
