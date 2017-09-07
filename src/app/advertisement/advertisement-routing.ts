@@ -10,9 +10,6 @@ const routes: Routes = [
   { path: 'hotels', component: HotelsComponent }
 ];
 
-// @NgModule({
-//   imports: [RouterModule.forChild(routes)],
-//   exports: [RouterModule]
-// })
+
 export const AdvertisementRouting = RouterModule.forChild(routes);
-// export const UsersRoutes = RouterModule.forChild(routes);
+

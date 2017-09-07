@@ -3,10 +3,10 @@ export class Advertisement {
     propertyType: string;
     ownerEmail: string;
     ownerFullname: string;
-    ownerPhone: string;
+    ownerPhone: number;
     propertyAddress: string;
     roomsCount: number;
     bedsCount: number;
-    propertyPrice: string;
+    propertyPrice: number;
     description: string;
 }
