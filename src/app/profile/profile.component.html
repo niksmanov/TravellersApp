@@ -8,7 +8,8 @@
       <div class="panel-heading">
         <h4 class="panel-title">
           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-            <p class="advertisement" align="center" appStrongItem>Add new advertisement</p>
+            <p *ngIf='!isEdited' class="advertisement" align="center" appStrongItem>Add new advertisement</p>
+            <p *ngIf='isEdited' class="advertisement" align="center" appStrongItem>Edit existing advertisement</p>
           </a>
         </h4>
       </div>
@@ -20,9 +21,9 @@
             <div class="form-group">
               <label class="control-label col-md-4  "> Property type </label>
               <div class="controls col-md-8 " style="margin-bottom: 10px">
-                <label class="radio-inline"><input required [(ngModel)]="advertisement.propertyType" type="radio" name="propertyType" value="Apartment"  style="margin-bottom: 10px">Apartment</label>
-                <label class="radio-inline"><input required [(ngModel)]="advertisement.propertyType" type="radio" name="propertyType" value="House"  style="margin-bottom: 10px">House</label>
-                <label class="radio-inline"><input required [(ngModel)]="advertisement.propertyType" type="radio" name="propertyType" value="Hotel"  style="margin-bottom: 10px">Hotel</label>
+                <label class="radio-inline"><input required autocomplete="off" [(ngModel)]="advertisement.propertyType" type="radio" name="propertyType" value="Apartment"  style="margin-bottom: 10px">Apartment</label>
+                <label class="radio-inline"><input required autocomplete="off" [(ngModel)]="advertisement.propertyType" type="radio" name="propertyType" value="House"  style="margin-bottom: 10px">House</label>
+                <label class="radio-inline"><input required autocomplete="off" [(ngModel)]="advertisement.propertyType" type="radio" name="propertyType" value="Hotel"  style="margin-bottom: 10px">Hotel</label>
               </div>
             </div>
 
@@ -37,27 +38,24 @@
             <div class="form-group">
               <label class="control-label col-md-4  "> Owner full name </label>
               <div class="controls col-md-8 ">
-                <input required class="input required -md textinput required  textinput required  form-control" name="ownerFullname"
-                  placeholder="Your Frist name and Last name" [(ngModel)]="advertisement.ownerFullname" style="margin-bottom: 10px"
-                  type="text" />
+                <input autocomplete="off" required class="input required -md textinput required  textinput required  form-control" name="ownerFullname" placeholder="Your First name and Last name"
+                  [(ngModel)]="advertisement.ownerFullname" style="margin-bottom: 10px" type="text" />
               </div>
             </div>
 
             <div id="div_id_company" class="form-group">
               <label for="id_company" class="control-label col-md-4  "> Owner phone </label>
               <div class="controls col-md-8 ">
-                <input required class="input required -md textinput required  textinput required  form-control" name="ownerPhone"
-                  placeholder="Your phone" [(ngModel)]="advertisement.ownerPhone" style="margin-bottom: 10px" type="number"
-                />
+                <input autocomplete="off" required class="input required -md textinput required  textinput required  form-control" name="ownerPhone" placeholder="Your phone"
+                  [(ngModel)]="advertisement.ownerPhone" style="margin-bottom: 10px" type="number" />
               </div>
             </div>
 
             <div class="form-group">
               <label class="control-label col-md-4">Property address </label>
               <div class="controls col-md-8 ">
-                <input required class="input required -md textinput required  textinput required  form-control" name="propertyAddress"
-                  placeholder="Your property address" [(ngModel)]="advertisement.propertyAddress" style="margin-bottom: 10px"
-                  type="text" />
+                <input autocomplete="off" required class="input required -md textinput required  textinput required  form-control" name="propertyAddress" placeholder="Your property address"
+                  [(ngModel)]="advertisement.propertyAddress" style="margin-bottom: 10px" type="text" />
               </div>
             </div>
 
@@ -86,23 +84,25 @@
             <div class="form-group">
               <label class="control-label col-md-4">Price per night </label>
               <div class="controls col-md-8 ">
-                <input required class="input required -md textinput required  textinput required  form-control" name="propertyPrice"
-                  placeholder="Your property price per night" [(ngModel)]="advertisement.propertyPrice" style="margin-bottom: 10px"
-                  type="number" />
+                <input required autocomplete="off" class="input required -md textinput required  textinput required  form-control" name="propertyPrice" placeholder="Your property price per night"
+                  [(ngModel)]="advertisement.propertyPrice" style="margin-bottom: 10px" type="number" />
               </div>
             </div>
 
             <div class="form-group">
               <label class="control-label col-md-4">Description </label>
               <div class="controls col-md-8 ">
-                <textarea rows="5" required class="input required -md textinput required  textinput required  form-control"
-                  name="description" placeholder="Extra info about advertisement..." [(ngModel)]="advertisement.description"
-                  style="margin-bottom: 10px; resize:none; overflow:hidden;" type="text" maxlength="250"></textarea>
+                <textarea rows="5" required class="input required -md textinput required  textinput required  form-control" name="description"
+                  placeholder="Extra info about advertisement..." [(ngModel)]="advertisement.description" style="margin-bottom: 10px; resize:none; overflow:hidden;"
+                  type="text" maxlength="250"></textarea>
               </div>
             </div>
 
             <div class="form-group buttons">
-              <button id="add" type="submit" class="button btn btn-success" (click)='createAdvertisement()' [disabled]="!createForm.valid">Add advertisement</button>
+              <button *ngIf='isEdited' id="add" type="submit" class="button btn btn-info" (click)='editAdvertisement()' [disabled]="!createForm.valid"
+                data-toggle="collapse" data-target="#collapseOne">Edit advertisement</button>
+              <button *ngIf='!isEdited' id="add" type="submit" class="button btn btn-success" (click)='createAdvertisement()' [disabled]="!createForm.valid"
+                data-toggle="collapse" data-target="#collapseOne">Add advertisement</button>
             </div>
           </form>
 
@@ -133,6 +133,7 @@
                 <th class="advInfo">Rooms</th>
                 <th class="advInfo">Beds</th>
                 <th class="advInfo">Price</th>
+                <th class="advInfo">Edit?</th>
                 <th class="advInfo">Delete?</th>
               </tr>
             </thead>
@@ -145,6 +146,7 @@
                 <td class="advInfo"> {{advertisement.roomsCount}}</td>
                 <td class="advInfo"> {{advertisement.bedsCount}}</td>
                 <td class="advInfo"> {{advertisement.propertyPrice}}</td>
+                <td align="center"><button type="submit" class="button btn btn-info" data-toggle="collapse" data-target="#collapseOne" (click)='advertisementToEdit(advertisement.$key)'>...</button></td>
                 <td align="center"><button type="submit" class="button btn btn-danger" (click)='deleteAdvertisement(advertisement.$key)'>X</button></td>
               </tr>
             </tbody>

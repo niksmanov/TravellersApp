@@ -5,7 +5,7 @@ import { UpperCaseFirstLetterPipe } from './upperCase-firstLetter.pipe';
 
 describe('Pipe: UpperCaseFirstLettere', () => {
   it('create an instance', () => {
-    let pipe = new UpperCaseFirstLetterPipe();
+    const pipe = new UpperCaseFirstLetterPipe();
     expect(pipe).toBeTruthy();
   });
 });

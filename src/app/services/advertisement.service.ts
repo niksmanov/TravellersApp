@@ -40,6 +40,12 @@ export class AdvertisementService {
             .catch(error => this.handleError(error));
     }
 
+    // Edit advertisement
+    updateItem(key: string, value: any): void {
+        this.advertisements.update(key, value)
+            .catch(error => this.handleError(error));
+    }
+
     // Default error handling for all actions
     private handleError(error) {
         console.log(error);
