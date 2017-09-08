@@ -1,5 +1,5 @@
 <div class="tabular-form">
-  <legend align="center">{{auth.currentUserDisplayName | upperCaseFirstLetter}}'s profile</legend>
+  <legend align="center">{{auth.currentUserDisplayName | upperCaseFirstLetter | emailSplit}}'s profile</legend>
 </div>
 
 <div class="container">
@@ -38,24 +38,27 @@
             <div class="form-group">
               <label class="control-label col-md-4  "> Owner full name </label>
               <div class="controls col-md-8 ">
-                <input autocomplete="off" required class="input required -md textinput required  textinput required  form-control" name="ownerFullname" placeholder="Your First name and Last name"
-                  [(ngModel)]="advertisement.ownerFullname" style="margin-bottom: 10px" type="text" />
+                <input autocomplete="off" required class="input required -md textinput required  textinput required  form-control" name="ownerFullname"
+                  placeholder="Your First name and Last name" [(ngModel)]="advertisement.ownerFullname" style="margin-bottom: 10px"
+                  type="text" />
               </div>
             </div>
 
             <div id="div_id_company" class="form-group">
               <label for="id_company" class="control-label col-md-4  "> Owner phone </label>
               <div class="controls col-md-8 ">
-                <input autocomplete="off" required class="input required -md textinput required  textinput required  form-control" name="ownerPhone" placeholder="Your phone"
-                  [(ngModel)]="advertisement.ownerPhone" style="margin-bottom: 10px" type="number" />
+                <input autocomplete="off" required class="input required -md textinput required  textinput required  form-control" name="ownerPhone"
+                  placeholder="Your phone" [(ngModel)]="advertisement.ownerPhone" style="margin-bottom: 10px" type="number"
+                />
               </div>
             </div>
 
             <div class="form-group">
               <label class="control-label col-md-4">Property address </label>
               <div class="controls col-md-8 ">
-                <input autocomplete="off" required class="input required -md textinput required  textinput required  form-control" name="propertyAddress" placeholder="Your property address"
-                  [(ngModel)]="advertisement.propertyAddress" style="margin-bottom: 10px" type="text" />
+                <input autocomplete="off" required class="input required -md textinput required  textinput required  form-control" name="propertyAddress"
+                  placeholder="Your property address" [(ngModel)]="advertisement.propertyAddress" style="margin-bottom: 10px"
+                  type="text" />
               </div>
             </div>
 
@@ -82,10 +85,11 @@
             </div>
 
             <div class="form-group">
-              <label class="control-label col-md-4">Price per night </label>
+              <label class="control-label col-md-4">Price per night in €</label>
               <div class="controls col-md-8 ">
-                <input required autocomplete="off" class="input required -md textinput required  textinput required  form-control" name="propertyPrice" placeholder="Your property price per night"
-                  [(ngModel)]="advertisement.propertyPrice" style="margin-bottom: 10px" type="number" />
+                <input required autocomplete="off" class="input required -md textinput required  textinput required  form-control" name="propertyPrice"
+                  placeholder="Your property price per night" [(ngModel)]="advertisement.propertyPrice" style="margin-bottom: 10px"
+                  type="number" />
               </div>
             </div>
 
@@ -140,12 +144,12 @@
 
             <tbody>
               <tr *ngFor="let advertisement of advertisementsList | async">
-                <td class="advInfo"> {{advertisement.propertyType}}</td>
-                <td class="advInfo"> {{advertisement.ownerPhone}}</td>
-                <td class="advInfo"> {{advertisement.propertyAddress}}</td>
-                <td class="advInfo"> {{advertisement.roomsCount}}</td>
-                <td class="advInfo"> {{advertisement.bedsCount}}</td>
-                <td class="advInfo"> {{advertisement.propertyPrice}}</td>
+                <td class="advInfo">{{advertisement.propertyType}}</td>
+                <td class="advInfo">{{advertisement.ownerPhone}}</td>
+                <td class="advInfo">{{advertisement.propertyAddress}}</td>
+                <td class="advInfo">{{advertisement.roomsCount}}</td>
+                <td class="advInfo">{{advertisement.bedsCount}}</td>
+                <td class="advInfo">€ {{advertisement.propertyPrice}}</td>
                 <td align="center"><button type="submit" class="button btn btn-info" data-toggle="collapse" data-target="#collapseOne" (click)='advertisementToEdit(advertisement.$key)'>...</button></td>
                 <td align="center"><button type="submit" class="button btn btn-danger" (click)='deleteAdvertisement(advertisement.$key)'>X</button></td>
               </tr>

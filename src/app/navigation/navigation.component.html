@@ -13,14 +13,14 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-left">
-          <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-          <li><a [routerLink]="['advertisement/apartments']" routerLinkActive="active">Apartments</a></li>
-          <li><a [routerLink]="['advertisement/houses']" routerLinkActive="active">Houses</a></li>
-          <li><a [routerLink]="['advertisement/hotels']" routerLinkActive="active">Hotels</a></li>
+          <li><a routerLink="/" routerLinkActive="active" appUnderlineItem>Home</a></li>
+          <li><a [routerLink]="['advertisement/apartments']" routerLinkActive="active" appUnderlineItem>Apartments</a></li>
+          <li><a [routerLink]="['advertisement/houses']" routerLinkActive="active" appUnderlineItem>Houses</a></li>
+          <li><a [routerLink]="['advertisement/hotels']" routerLinkActive="active" appUnderlineItem>Hotels</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li *ngIf="auth.currentUser"><a routerLink="/profile" routerLinkActive="active" appStrongItem>Hello, {{auth.currentUserDisplayName | upperCaseFirstLetter}}</a></li>
+          <li *ngIf="auth.currentUser"><a routerLink="/profile" routerLinkActive="active" appStrongItem>Hello, {{auth.currentUserDisplayName | upperCaseFirstLetter | emailSplit}}</a></li>
           <li *ngIf="!auth.currentUser"><a routerLink="/login" routerLinkActive="active" appStrongItem>Log in</a></li>
           <li *ngIf="!auth.currentUser"><a routerLink="/register" routerLinkActive="active" appStrongItem>Register</a></li>
           <li *ngIf="auth.currentUser"><a routerLink="/home" routerLinkActive="active" appStrongItem (click)="logout()">Log out</a></li>
