@@ -1,8 +1,9 @@
 <div class="tabular-form">
   <legend align="center">Hotels</legend>
 </div>
+<app-preview *ngFor="let advertisementEL of advertisements | async" [advertisement]="advertisementEL"></app-preview>
 
-<div class="container">
+<!-- <div class="container">
   <div *ngFor="let advertisement of advertisements | async">
     <div class="well">
       <div class="media">
@@ -16,10 +17,10 @@
           <p><strong>Property address: </strong>{{advertisement.propertyAddress}}</p>
           <p><strong>Rooms: </strong>{{advertisement.roomsCount}}</p>
           <p><strong>Beds: </strong>{{advertisement.bedsCount}}</p>
-          <p><strong>Price per night: </strong>€ {{advertisement.propertyPrice}}</p>
+          <p><strong>Price per night: </strong>{{advertisement.propertyPrice}}</p>
           <p><strong>Description: </strong>{{advertisement.description}}</p>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div> -->

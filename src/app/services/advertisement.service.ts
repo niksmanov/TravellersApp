@@ -19,7 +19,9 @@ export class AdvertisementService {
         });
         return this.advertisements;
     }
-
+    getAdvertisementsDetails(key: string): FirebaseObjectObservable<Advertisement> {
+        return this.db.object(`/advertisements/${key}`);
+      }
     // Return a single observable advertisement
     getAdvertisement(key: string): FirebaseObjectObservable<Advertisement> {
         const advPath = `${this.basePath}/${key}`;

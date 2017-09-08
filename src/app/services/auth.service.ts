@@ -55,7 +55,7 @@ export class AuthService {
         } else if (this.currentUserAnonymous) {
             return 'Anonymous';
         } else {
-            const username = this.authState.email;
+            const username = this.authState.email.split('@')[0];
             return username;
         }
     }

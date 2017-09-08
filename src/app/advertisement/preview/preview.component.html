@@ -1,0 +1,16 @@
+<a [routerLink] ="advertisement.$key" class="list-group-item clearfix" >
+  <div class="pull-left">
+       <div class="media">
+         <a class="pull-left">
+             <img class="media-object" src="../../assets/images/image9.jpg" width="200px">
+           </a>
+         <div class="media-body">
+           <p><strong>Owner full name: </strong>{{advertisement.ownerFullname}}</p>
+           <p><strong>Owner phone: </strong>{{advertisement.ownerPhone}}</p>
+           <p><strong>Property address: </strong>{{advertisement.propertyAddress}}</p>
+           <p><strong>Property address: </strong>{{advertisement.$key}}</p>
+         </div>
+       </div>
+     </div>
+</a>
+
