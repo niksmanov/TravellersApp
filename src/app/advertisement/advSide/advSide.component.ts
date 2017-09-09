@@ -12,13 +12,11 @@ import 'rxjs/Rx';
 })
 export class AdvSideComponent implements OnInit {
   public advertisement: Advertisement;
-  public key:string;
+  public key: string;
 
   constructor(private route: ActivatedRoute, private service: AdvertisementService) { }
 
   ngOnInit() {
-  
-   
     this.route.params
     .map(params => params['key'])
     .do(key => this.key)
@@ -26,9 +24,7 @@ export class AdvSideComponent implements OnInit {
       return this.service.getAdvertisementsDetails(key);
     })
     .subscribe(res => {
-      this.advertisement=res}
-    );
-    
+      this.advertisement = res });
   }
 
 }
