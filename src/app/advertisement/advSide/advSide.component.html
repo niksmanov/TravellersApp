@@ -1,65 +1,81 @@
 <div class="adv-conrainer">
-  <div class="block">  </div> 
-   <div class="tabular-form" *ngIf="advertisement">
-     <legend align="center">{{advertisement.ownerFullname}}'s advertisement</legend>
-       
-         <div class="row">
-             <h4>Owner details: </h4>
-            <div class="col-sm-2">
-                <span class="glyphicon glyphicon-user"></span> Name:
-             </div>
-             <div>
-                  {{advertisement.ownerFullname}} 
+    <div class="tabular-form" *ngIf="advertisement">
+        <legend align="center">{{advertisement.ownerFullname}}'s advertisement</legend>
+
+        <a *ngIf="advertisement.propertyType==='Hotel'">
+                <img class="img-responsive" src="../../assets/images/image5.jpg">
+        </a>
+        <a *ngIf="advertisement.propertyType==='House'">
+                <img class="img-responsive" src="../../assets/images/image7.jpg">
+        </a>
+        <a *ngIf="advertisement.propertyType==='Apartment'">
+                <img class="img-responsive" src="../../assets/images/image8.jpg">
+        </a>
+
+        <div class="container">
+            <div class="col-md-6">
+                <table class="table-responsive">
+                    <thead>
+                        <tr>
+                            <h4><strong>Owner details: </strong></h4>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p><span class="glyphicon glyphicon-user"></span> Name: {{advertisement.ownerFullname}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="glyphicon glyphicon-envelope"></span> Email: {{advertisement.ownerEmail}} </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="glyphicon glyphicon-phone-alt"></span> Phone number: {{advertisement.ownerPhone}}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="col-sm-2">
-                <span class="glyphicon glyphicon-envelope"></span> Email:
-             </div>
-             <div>
-                  {{advertisement.ownerEmail}} 
+
+            <div class="col-md-6">
+                <table class="table-responsive">
+                    <thead>
+                        <tr>
+                            <h4><strong>Property details: </strong></h4>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p><span class="glyphicon glyphicon-map-marker"></span> Address: {{advertisement.propertyAddress}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="glyphicon glyphicon-bed"></span> Beds: {{advertisement.bedsCount}} </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="glyphicon glyphicon-modal-window"></span> Rooms: {{advertisement.roomsCount}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="glyphicon glyphicon-euro"></span> Price: {{advertisement.propertyPrice}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="glyphicon glyphicon-list-alt"></span> Description: {{advertisement.description}}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="col-sm-2">
-                <span class="glyphicon glyphicon-phone-alt"></span> Phone number:
-             </div>
-             <div>
-                  {{advertisement.ownerPhone}} 
-            </div>
-        <div>
-          <hr>
-          <div class="row">
-              <h4>Property details: </h4>
-               <div class="col-sm-2">
-                  <span class="glyphicon glyphicon-map-marker"></span> Address:
-               </div>
-               <div>
-                    {{advertisement.propertyAddress}} 
-              </div>
-             <div class="col-sm-2">
-                <span class="glyphicon glyphicon-bed"></span> Beds:
-              </div>
-              <div>
-                   {{advertisement.bedsCount}} 
-             </div>
-             <div class="col-sm-2">
-                <span class="glyphicon glyphicon-modal-window"></span> Rooms:
-              </div>
-              <div>
-                   {{advertisement.roomsCount}} 
-             </div>
-             <div class="col-sm-2">
-                <span class="glyphicon glyphicon-euro"></span> Price:
-             </div>
-             <div>
-                  {{advertisement.propertyPrice}} 
-            </div>
-             <div class="col-sm-2">
-                <span class="glyphicon glyphicon-list-alt"></span> Description:
-              </div>
-              <div>
-                   {{advertisement.description}} 
-             </div>
-         <div>
-          </div>
-       
+        </div>
     </div>
- 
 </div>

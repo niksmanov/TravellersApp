@@ -11,7 +11,7 @@ describe('Profile Component', () => {
   let authService;
   let testAdv: Advertisement;
 
-  let result = [{
+  const result = [{
               onwerEmail: 'testEmail@test.bg',
               ownerFullname: 'test full name',
               ownerPhone: '0123124525',
@@ -27,13 +27,13 @@ describe('Profile Component', () => {
   service =
     // tslint:disable-next-line:one-line
     {
-      getAdvertisementsList: ({orderByChild: propertyType, equalTo: apartment})=>{
+      getAdvertisementsList: ({orderByChild: propertyType, equalTo: apartment}) => {
           return result;
       },
-      createAdvertisement: ()=>{
-        
+      createAdvertisement: () => {
+
       },
-      deleteAdvertisement: ()=>{
+      deleteAdvertisement: () => {
 
       }
     };
@@ -57,7 +57,7 @@ describe('Profile Component', () => {
   it('ngOnInit() should call method getAdvertisementsList once with correct parameters', () => {
       spyOn(service, 'getAdvertisementsList');
       component.ngOnInit();
-      
+
       expect(service.getAdvertisementsList).toHaveBeenCalledWith(
         {
           orderByChild: 'ownerEmail',
@@ -97,12 +97,12 @@ describe('Profile Component', () => {
   });
 
   it('createAdvertisement() should call createAdvertisment', () => {
-    spyOn(service,'createAdvertisement');
+    spyOn(service, 'createAdvertisement');
     component.createAdvertisement();
     expect(service.createAdvertisement).toHaveBeenCalledTimes(1);
   });
 it('deleteAdvertisement() should call deleteAdvertisement', () => {
-    spyOn(service,'deleteAdvertisement');
+    spyOn(service, 'deleteAdvertisement');
     component.deleteAdvertisement(testAdv);
     expect(service.deleteAdvertisement).toHaveBeenCalledTimes(1);
   });
