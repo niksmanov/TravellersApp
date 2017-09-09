@@ -1,28 +1,26 @@
 .adv-conrainer{
-    position: relative;
-    background-image: url("../../../assets/images/image8.jpg");
-    /* background-size: 100%; */
-    width: 100%;
-    height: 100%;
-    font-size: 120%;
-}
-.row details{
+    /* position: relative; */
 
+}
+.block{
+    background-image: url("../../../assets/cover.png");
+    /* background-size: 100%; */
+    width: 70%;
+    /* opacity: 0.8; */
+    position: absolute;
+    height: 46%;
+    font-size: 120%;
+    left:15%;
     
   
 }
 .tabular-form{
-    color: white;
+     position: absolute; 
+     /* color: #282222; */
     margin: auto;
     width: 70%;
     padding: 60px;
-     border: 1px solid gray;
+    left:15%;
+    top:52%;
 }
 
-@media only screen and (max-width: 500px) {
-    .tabular-form {
-        /* margin: auto;
-        width: 100%;
-        padding: 10px; */
-    }
-}
