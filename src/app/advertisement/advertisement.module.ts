@@ -10,9 +10,11 @@ import { AdvertisementRouting } from './advertisement-routing';
 
 // Pipes
 import { UpperCaseFirstLetterPipe } from '../shared/upperCase-firstLetter.pipe';
+import { EmailSplitPipe } from '../shared/email-split.pipe';
 
 // Directives
 import { StrongItemDirective } from '../shared/strongItem.directive';
+import { UnderlineItemDirective } from '../shared/underlineItem.directive';
 import { PreviewComponent } from './preview/preview.component';
 import { AdvSideComponent } from './advSide/advSide.component';
 
@@ -30,7 +32,9 @@ import { AdvSideComponent } from './advSide/advSide.component';
     HotelsComponent,
     HousesComponent,
     UpperCaseFirstLetterPipe,
-    StrongItemDirective
+    EmailSplitPipe,
+    StrongItemDirective,
+    UnderlineItemDirective
   ],
   declarations: [
     ProfileComponent,
@@ -38,7 +42,9 @@ import { AdvSideComponent } from './advSide/advSide.component';
     HotelsComponent,
     HousesComponent,
     UpperCaseFirstLetterPipe,
+    EmailSplitPipe,
     StrongItemDirective,
+    UnderlineItemDirective,
     PreviewComponent,
     AdvSideComponent
 ]

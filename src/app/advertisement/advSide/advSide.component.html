@@ -1,10 +1,5 @@
+<div class="tabular-form" *ngIf="advertisement">
+  <legend align="center">{{advertisement.ownerFullname}}'s advertisement</legend>
 
-  <div *ngIf="advertisement">
-    <div>
-      {{advertisement.propertyAddress}}
-      {{advertisement.ownerFullname}}
-      {{advertisement.ownerEmail}}
-    </div>
-  </div>
-
-
+  {{advertisement.propertyAddress}} {{advertisement.ownerFullname}} {{advertisement.ownerEmail}}
+</div>
