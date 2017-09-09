@@ -1,3 +1,4 @@
+import { AdvSideComponent } from './advSide/advSide.component';
 import { HousesComponent } from './houses/houses.component';
 import { HotelsComponent } from './hotels/hotels.component';
 import { ApartmentsComponent } from './apartments/apartments.component';
@@ -6,8 +7,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: 'apartments', component: ApartmentsComponent },
+  { path: 'apartments/:key', component: AdvSideComponent },
   { path: 'houses', component: HousesComponent },
-  { path: 'hotels', component: HotelsComponent }
+  { path: 'houses/:key', component: AdvSideComponent },
+  { path: 'hotels', component: HotelsComponent },
+  { path: 'hotels/:key', component: AdvSideComponent }
 ];
 
 

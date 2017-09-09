@@ -12,7 +12,8 @@ export class HousesComponent implements OnInit {
 
   advertisements: FirebaseListObservable<Advertisement[]>;
 
-  constructor(private advSvc: AdvertisementService) { }
+  constructor(private advSvc: AdvertisementService) {
+   }
 
   ngOnInit() {
     this.advertisements = this.advSvc.getAdvertisementsList

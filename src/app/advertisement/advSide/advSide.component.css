@@ -1,0 +1,26 @@
+.adv-conrainer{
+    /* position: relative; */
+
+}
+.block{
+    background-image: url("../../../assets/cover.png");
+    /* background-size: 100%; */
+    width: 70%;
+    /* opacity: 0.8; */
+    position: absolute;
+    height: 46%;
+    font-size: 120%;
+    left:15%;
+    
+  
+}
+.tabular-form{
+     position: absolute; 
+     /* color: #282222; */
+    margin: auto;
+    width: 70%;
+    padding: 60px;
+    left:15%;
+    top:52%;
+}
+

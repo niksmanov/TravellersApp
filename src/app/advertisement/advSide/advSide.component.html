@@ -1,0 +1,65 @@
+<div class="adv-conrainer">
+  <div class="block">  </div> 
+   <div class="tabular-form" *ngIf="advertisement">
+     <legend align="center">{{advertisement.ownerFullname}}'s advertisement</legend>
+       
+         <div class="row">
+             <h4>Owner details: </h4>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-user"></span> Name:
+             </div>
+             <div>
+                  {{advertisement.ownerFullname}} 
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-envelope"></span> Email:
+             </div>
+             <div>
+                  {{advertisement.ownerEmail}} 
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-phone-alt"></span> Phone number:
+             </div>
+             <div>
+                  {{advertisement.ownerPhone}} 
+            </div>
+        <div>
+          <hr>
+          <div class="row">
+              <h4>Property details: </h4>
+               <div class="col-sm-2">
+                  <span class="glyphicon glyphicon-map-marker"></span> Address:
+               </div>
+               <div>
+                    {{advertisement.propertyAddress}} 
+              </div>
+             <div class="col-sm-2">
+                <span class="glyphicon glyphicon-bed"></span> Beds:
+              </div>
+              <div>
+                   {{advertisement.bedsCount}} 
+             </div>
+             <div class="col-sm-2">
+                <span class="glyphicon glyphicon-modal-window"></span> Rooms:
+              </div>
+              <div>
+                   {{advertisement.roomsCount}} 
+             </div>
+             <div class="col-sm-2">
+                <span class="glyphicon glyphicon-euro"></span> Price:
+             </div>
+             <div>
+                  {{advertisement.propertyPrice}} 
+            </div>
+             <div class="col-sm-2">
+                <span class="glyphicon glyphicon-list-alt"></span> Description:
+              </div>
+              <div>
+                   {{advertisement.description}} 
+             </div>
+         <div>
+          </div>
+       
+    </div>
+ 
+</div>
