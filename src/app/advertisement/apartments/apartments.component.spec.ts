@@ -5,24 +5,73 @@ import { DebugElement } from '@angular/core';
 
 import { ApartmentsComponent } from './apartments.component';
 
-describe('ApartmentsComponent', () => {
+describe('Apartments Component', () => {
   let component: ApartmentsComponent;
-  let fixture: ComponentFixture<ApartmentsComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ApartmentsComponent ]
-    })
-    .compileComponents();
-  }));
+  let service;  
+  let result = [{
+              onwerEmail: 'testEmail@test.bg',
+              ownerFullname: 'test full name',
+              ownerPhone: '0123124525',
+              propertyAdress: 'test adress',
+              roomsCount: 2,
+              bedsCount: 3,
+              propertyPrice: 123,
+              description: 'test description'
+          }];
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ApartmentsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+
+  service =
+    // tslint:disable-next-line:one-line
+    {
+      getAdvertisementsList: ({orderByChild: propertyType, equalTo: apartment})=>{
+          return result;
+      }
+    };
+
+    component = new ApartmentsComponent(service);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should call method getAdvertisementsList once', () => {
+      spyOn(service, 'getAdvertisementsList');
+      component.ngOnInit();
+      component.ngOnInit();
+      expect(service.getAdvertisementsList).toHaveBeenCalledTimes(2);
+  });
+
+  it('should call method getAdvertisementsList once with correct parameters', () => {
+      spyOn(service, 'getAdvertisementsList');
+      component.ngOnInit();
+      expect(service.getAdvertisementsList).toHaveBeenCalledWith(
+        {
+          orderByChild: 'propertyType',
+          equalTo: 'Apartment'
+        }
+      );
+  });
+
+  it('should create return correct result and inicialize correctly', () => {
+    component.ngOnInit();
+    expect(component.advertisements).toBeTruthy();
+  });
+
+  it('should create return correct email', () => {
+    component.ngOnInit();
+    expect(component.advertisements[0].onwerEmail).toEqual('testEmail@test.bg');
+  });
+
+  it('should create return correct full name', () => {
+    component.ngOnInit();
+    expect(component.advertisements[0].ownerFullname).toEqual('test full name');
+  });
+
+  it('should create return correct phone', () => {
+    component.ngOnInit();
+    expect(component.advertisements[0].ownerPhone).toEqual('0123124525');
+  });
+
+  it('should create return correct propertyPrice', () => {
+    component.ngOnInit();
+    expect(component.advertisements[0].propertyPrice).toEqual(123);
   });
 });
