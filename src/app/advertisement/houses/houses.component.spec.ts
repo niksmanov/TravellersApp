@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -7,7 +7,7 @@ import { HousesComponent } from './houses.component';
 
 describe('Houses Component', () => {
   let component: HousesComponent;
-  let service;  
+  let service;
   let result = [{
               onwerEmail: 'testEmail@test.bg',
               ownerFullname: 'test full name',
@@ -19,12 +19,11 @@ describe('Houses Component', () => {
               description: 'test description'
           }];
 
-  beforeEach(() => {
-
+  beforeEach(() =>{
   service =
     // tslint:disable-next-line:one-line
     {
-      getAdvertisementsList: ({orderByChild: propertyType, equalTo: apartment})=>{
+      getAdvertisementsList: ({orderByChild: propertyType, equalTo: apartment}) =>{
           return result;
       }
     };
@@ -73,5 +72,8 @@ describe('Houses Component', () => {
   it('should create return correct propertyPrice', () => {
     component.ngOnInit();
     expect(component.advertisements[0].propertyPrice).toEqual(123);
+  });
+
+  it('should render home button', () => {
   });
 });
