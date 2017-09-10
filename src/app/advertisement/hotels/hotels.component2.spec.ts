@@ -50,15 +50,15 @@ describe('Hotels Component integration tests', () => {
     fixture.detectChanges();
   });
   it('should render hotels button', () => {
-    let de = fixture.debugElement.query(By.css('.tabular-form'));
-    let el: HTMLElement = de.nativeElement;
+    const de = fixture.debugElement.query(By.css('.tabular-form'));
+    const el: HTMLElement = de.nativeElement;
 
     expect(el.innerText).toContain('Hotels');
   });
 
   it('should render correctly the one inserted house', () => {
-    let de = fixture.debugElement.query(By.css('div.media'));
-    let el: HTMLElement = de.nativeElement;
+    const de = fixture.debugElement.query(By.css('div.media'));
+    const el: HTMLElement = de.nativeElement;
 
 
     expect(el.innerText).toContain('Owner full name: testOwnerName');

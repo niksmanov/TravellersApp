@@ -8,7 +8,7 @@ import { HousesComponent } from './houses.component';
 describe('Houses Component', () => {
   let component: HousesComponent;
   let service;
-  let result = [{
+  const result = [{
               onwerEmail: 'testEmail@test.bg',
               ownerFullname: 'test full name',
               ownerPhone: '0123124525',
@@ -19,11 +19,11 @@ describe('Houses Component', () => {
               description: 'test description'
           }];
 
-  beforeEach(() =>{
+  beforeEach(() => {
   service =
     // tslint:disable-next-line:one-line
     {
-      getAdvertisementsList: ({orderByChild: propertyType, equalTo: apartment}) =>{
+      getAdvertisementsList: ({orderByChild: propertyType, equalTo: apartment}) => {
           return result;
       }
     };

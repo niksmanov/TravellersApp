@@ -1,7 +1,7 @@
 import { RegisterPage } from './register.po';
 import { browser } from 'protractor';
 
-describe('Log in page', () => {
+describe('Register page', () => {
   let page: RegisterPage;
 
   beforeEach(() => {
