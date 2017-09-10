@@ -8,6 +8,7 @@ import { Advertisement } from '../../models/advertisement';
 import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('Apartments Component integration tests', () => {
   let component: ApartmentsComponent;
@@ -35,8 +36,11 @@ describe('Apartments Component integration tests', () => {
     };
 
     TestBed.configureTestingModule({
-      declarations: [ApartmentsComponent, PreviewComponent],
-      imports: [],
+      declarations: [
+      ApartmentsComponent,
+      PreviewComponent,
+     ],
+      imports: [ RouterTestingModule ],
       providers: [
         { provide: AdvertisementService, useValue: mockService }
       ]

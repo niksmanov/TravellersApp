@@ -8,6 +8,7 @@ import { Advertisement } from '../../models/advertisement';
 import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('Hotels Component integration tests', () => {
   let component: HotelsComponent;
@@ -36,7 +37,7 @@ describe('Hotels Component integration tests', () => {
 
     TestBed.configureTestingModule({
       declarations: [HotelsComponent, PreviewComponent],
-      imports: [],
+      imports: [ RouterTestingModule ],
       providers: [
         { provide: AdvertisementService, useValue: mockService }
       ]
