@@ -7,8 +7,8 @@ import { HotelsComponent } from './hotels.component';
 
 describe('Hotels Component', () => {
   let component: HotelsComponent;
-  let service;  
-  let result = [{
+  let service;
+  const result = [{
               onwerEmail: 'testEmail@test.bg',
               ownerFullname: 'test full name',
               ownerPhone: '0123124525',
@@ -24,7 +24,7 @@ describe('Hotels Component', () => {
   service =
     // tslint:disable-next-line:one-line
     {
-      getAdvertisementsList: ({orderByChild: propertyType, equalTo: apartment})=>{
+      getAdvertisementsList: ({orderByChild: propertyType, equalTo: apartment}) => {
           return result;
       }
     };

@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import 'rxjs/Rx';
 @Component({
-  selector: 'app-advSide',
+  selector: 'app-advside',
   templateUrl: './advSide.component.html',
   styleUrls: ['./advSide.component.css']
 })
@@ -24,7 +24,7 @@ export class AdvSideComponent implements OnInit {
       return this.service.getAdvertisementsDetails(key);
     })
     .subscribe(res => {
-      this.advertisement = res });
+      this.advertisement = res; });
   }
 
 }
