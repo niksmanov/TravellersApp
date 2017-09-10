@@ -13,3 +13,5 @@
 
 
 **Website of the application:** [HERE](https://travellersapp-29582.firebaseapp.com/)
+
+**Documentation of the project:** [HERE](https://travellersdoc.herokuapp.com/)
