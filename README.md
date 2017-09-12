@@ -11,6 +11,7 @@
 |3. |Tania Dimitrova|[_Sunshinet_](https://github.com/Sunshinet)    |[_sunshinet_](http://telerikacademy.com/Users/sunshinet)  |
 
 
+**Project description:** [HERE](./docs/Project-description.md)
 
 **Website of the application:** [HERE](https://travellersapp-29582.firebaseapp.com/)
 
